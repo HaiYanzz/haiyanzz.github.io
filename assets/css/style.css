@@ -1,0 +1,330 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f6f4ef;
+  --ink: #1c1a17;
+  --muted: #6b6560;
+  --line: #e4dfd6;
+  --card: #fffdf9;
+  --accent: #185fa5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161513;
+    --ink: #f3efe8;
+    --muted: #a39c94;
+    --line: #2c2926;
+    --card: #1e1c1a;
+    --accent: #85b7eb;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.75;
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.sans {
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 0.85rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: 2.6rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  margin: 0 0 2.5rem;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+article.list-item {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+
+article.list-item h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+article.list-item h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+article.list-item h2 a:hover {
+  color: var(--accent);
+}
+
+article.list-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+time {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.post time {
+  margin-bottom: 0.5rem;
+}
+
+.post > h1 {
+  margin-bottom: 2rem;
+}
+
+.post-content {
+  font-size: 1.05rem;
+}
+
+.post-content h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.post-content h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.post-content p {
+  margin: 0 0 1.25rem;
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.post-content a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.post-content ul,
+.post-content ol {
+  padding-left: 1.4rem;
+  margin: 0 0 1.25rem;
+}
+
+.post-content li {
+  margin-bottom: 0.35rem;
+}
+
+.post-content blockquote {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+}
+
+.post-content hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+.post-content code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+.post-content pre {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.post-content pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.post-content pre:hover .copy-btn,
+.copy-btn:focus {
+  opacity: 1;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 0.85rem;
+}
+
+.post-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.post-nav a:hover {
+  color: var(--accent);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--accent);
+}
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.work-card {
+  padding: 1.25rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.work-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.work-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.work-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.work-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 2rem 1.25rem 3rem;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  .site-nav {
+    gap: 1.1rem;
+  }
+
+  .works {
+    grid-template-columns: 1fr;
+  }
+}

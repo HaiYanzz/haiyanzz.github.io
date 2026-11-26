@@ -3,107 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>haiyanzz · 个人博客</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f6f4ef;
-      --ink: #1c1a17;
-      --muted: #6b6560;
-      --line: #e4dfd6;
-      --card: #fffdf9;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #161513;
-        --ink: #f3efe8;
-        --muted: #a39c94;
-        --line: #2c2926;
-        --card: #1e1c1a;
-      }
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.7;
-    }
-
-    main {
-      max-width: 40rem;
-      margin: 0 auto;
-      padding: 5.5rem 1.5rem 4rem;
-    }
-
-    p.kicker {
-      margin: 0 0 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-family: "Avenir Next", "PingFang SC", sans-serif;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    h1 {
-      margin: 0 0 1rem;
-      font-size: 2.6rem;
-      font-weight: 500;
-      letter-spacing: -0.03em;
-    }
-
-    .lead {
-      margin: 0 0 2.5rem;
-      font-size: 1.15rem;
-      color: var(--muted);
-    }
-
-    article {
-      padding: 1.25rem 0;
-      border-top: 1px solid var(--line);
-    }
-
-    article h2 {
-      margin: 0 0 0.35rem;
-      font-size: 1.25rem;
-      font-weight: 500;
-    }
-
-    article p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    time {
-      display: block;
-      margin-bottom: 0.35rem;
-      font-family: "Avenir Next", "PingFang SC", sans-serif;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    footer {
-      margin-top: 2.5rem;
-      font-family: "Avenir Next", "PingFang SC", sans-serif;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-  </style>
+  <meta name="description" content="随手写下的想法、笔记和正在做的事。">
+  <title>随笔 · haiyanzz</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <main>
-    <p class="kicker">Personal Blog</p>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="index.html" aria-current="page">随笔</a>
+      <a href="works.html">作品</a>
+      <a href="about.html">关于</a>
+    </nav>
+    <p class="kicker">Personal blog</p>
     <h1>haiyanzz</h1>
-    <p class="lead">这里记录一些随手写下的想法、笔记和正在做的事。</p>
+    <p class="lead">随手写下的想法、笔记和正在做的事。</p>
 
-    <article>
+    <article class="list-item">
       <time datetime="2026-11-26">2026年11月26日</time>
-      <h2>博客开始了</h2>
+      <h2><a href="posts/博客开始了.html">博客开始了</a></h2>
       <p>第一页先放在这里。之后会慢慢把文章补上来。</p>
     </article>
 
